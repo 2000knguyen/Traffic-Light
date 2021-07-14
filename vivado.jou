@@ -1,0 +1,58 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Mon May 03 18:19:14 2021
+# Process ID: 16148
+# Current directory: C:/Users/Kendrick/Desktop/CECS 361/Final Project/CECS361FinalProject
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11440 C:\Users\Kendrick\Desktop\CECS 361\Final Project\CECS361FinalProject\CECS361FinalProject.xpr
+# Log file: C:/Users/Kendrick/Desktop/CECS 361/Final Project/CECS361FinalProject/vivado.log
+# Journal file: C:/Users/Kendrick/Desktop/CECS 361/Final Project/CECS361FinalProject\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Kendrick/Desktop/CECS 361/Final Project/CECS361FinalProject/CECS361FinalProject.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+source top_tb.tcl
+run 1000s
+run 1000s
+run 26s
+run 26s
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/Kendrick/Desktop/CECS 361/Final Project/CECS361FinalProject/CECS361FinalProject.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Kendrick/Desktop/CECS 361/Final Project/CECS361FinalProject/CECS361FinalProject.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/Kendrick/Desktop/CECS 361/Final Project/CECS361FinalProject/CECS361FinalProject.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+close [ open {C:/Users/Kendrick/Desktop/CECS 361/Final Project/CECS361FinalProject/CECS361FinalProject.srcs/sources_1/new/Top_fortb.v} w ]
+add_files {{C:/Users/Kendrick/Desktop/CECS 361/Final Project/CECS361FinalProject/CECS361FinalProject.srcs/sources_1/new/Top_fortb.v}}
+update_compile_order -fileset sources_1
+remove_files {{C:/Users/Kendrick/Desktop/CECS 361/Final Project/CECS361FinalProject/CECS361FinalProject.srcs/sources_1/new/Top_fortb.v}}
+file delete -force {C:/Users/Kendrick/Desktop/CECS 361/Final Project/CECS361FinalProject/CECS361FinalProject.srcs/sources_1/new/Top_fortb.v}
+close [ open {C:/Users/Kendrick/Desktop/CECS 361/Final Project/CECS361FinalProject/CECS361FinalProject.srcs/sources_1/new/Expected_TTL.v} w ]
+add_files {{C:/Users/Kendrick/Desktop/CECS 361/Final Project/CECS361FinalProject/CECS361FinalProject.srcs/sources_1/new/Expected_TTL.v}}
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Expected_TTL [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source top_tb.tcl
